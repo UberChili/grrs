@@ -9,7 +9,6 @@ fn main() {
         println!("Problem parsing arguments: {err}");
         process::exit(1);
     });
-    println!("looking for {} in: {}", config.query, config.filename);
 
     if let Err(e) = grrs::run(config) {
         println!("Application error: {e}");
