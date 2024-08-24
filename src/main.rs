@@ -1,11 +1,11 @@
-use std::process;
+use std::{env, process};
 
 use grrs::Config;
 
 fn main() {
-    let args: Vec<String> = std::env::args().collect();
+    //let args: Vec<String> = std::env::args().collect();
 
-    let config = Config::build(&args).unwrap_or_else(|err| {
+    let config = Config::build(env::args()).unwrap_or_else(|err| {
         println!("Problem parsing arguments: {err}");
         process::exit(1);
     });
